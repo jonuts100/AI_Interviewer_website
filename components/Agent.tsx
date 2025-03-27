@@ -18,14 +18,18 @@ const Agent = ({userName}: AgentProps) => {
     const lastMessage = messages[messages.length - 1]
     return (
         <>
-            <div className="call-view">
+            <div className="call-view my-8">
                 
                 <div className="card-interviewer">
                     <div className="avatar">
-                        <Image src="/ai-avatar.png" alt="vapi" width={65} height={64} className="object-cover"/>
+                        <Image 
+                        src="/ai-avatar.png" alt="vapi" 
+                        width={54} height={53} 
+                        className="object-cover"/>
                         {isSpeaking && <span className="animate-speak"></span>}
-                        <h3>AI Interviewer</h3>
                     </div>
+                    <h3>AI Interviewer</h3>
+                        
 
                 </div>
 
@@ -50,7 +54,7 @@ const Agent = ({userName}: AgentProps) => {
                     </div>
                 </div>
             )}
-            <div className="w-full flex justify-center">
+            <div className="w-full flex justify-center my-8">
                 {callStatus !== 'ACTIVE' ? (
                     <button className="relative btn-call">
                         <span className={cn("absolute animate-ping rounded-full opacity-75")}/>

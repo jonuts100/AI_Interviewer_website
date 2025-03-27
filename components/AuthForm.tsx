@@ -36,6 +36,7 @@ const AuthForm = ({type}: {type: FormType}) => {
             email: "",
             password: "",
         },
+
     })
     // 2. Define a submit handler.
     async function onSubmit(values: z.infer<typeof formSchema>) {
@@ -43,10 +44,10 @@ const AuthForm = ({type}: {type: FormType}) => {
             // check if type === sign up
             if(type === "sign-up"){
                 // create user
-                const {name, email, password} = values
                 // creates a new user in firebase auth using email and password
                 // NOT create a user in firestore database
                 // works if email is still valid (unused)
+                const {name, email, password} = values
                 const userCredentials = await createUserWithEmailAndPassword(auth, email, password)
                 const result = await signUp({
                     uid:  userCredentials.user.uid,
